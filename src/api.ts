@@ -17,7 +17,6 @@ app.get('/', (req, res) => {
   res.status(200).send({ status: 'ok' });
 });
 
-const api = express.Router();
 
 async function executeTriggerDev(uuid:string) {
   try {
