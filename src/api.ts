@@ -39,6 +39,7 @@ async function executeTriggerDev(uuid:string) {
 app.post('/triggerdevcaller', (req, res) => {
   const {automation_uuid}=req.body;
   executeTriggerDev(automation_uuid)
+  res.send("Automation send succesfully")
 });
 
 // Version the api
