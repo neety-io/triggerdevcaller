@@ -1,5 +1,5 @@
 import { config } from 'dotenv';
-import {app} from './api'
+import app from './api'
 import http from "http"
 
 if (process.env.NODE_ENV !== 'production') {
@@ -10,5 +10,5 @@ const server = http.createServer(app);
 const port = process.env.PORT || 3333;
 
 server.listen(port, () =>
-  console.log(`API available on http://localhost:${port}`)
+  console.log(`Server running in port:${port}`)
 );

@@ -3,7 +3,7 @@ import cors from 'cors';
 import axios from 'axios';
 import morgan from 'morgan';
 
-export const app = express();
+const app = express();
 
 app.use(cors({ origin: true }));
 
@@ -36,11 +36,12 @@ async function executeTriggerDev(uuid:string) {
   }
 }
 
-api.post('/triggerdevcaller', (req, res) => {
+app.post('/triggerdevcaller', (req, res) => {
   const {automation_uuid}=req.body;
   executeTriggerDev(automation_uuid)
 });
 
 // Version the api
-app.use('/api/v1', api);
+
+export default app;
 
